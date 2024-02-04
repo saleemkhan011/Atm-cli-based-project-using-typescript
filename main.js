@@ -33,14 +33,6 @@ let atm = await inquirer.prompt([
             return atm.mainMenu === 'Fast Cash';
         },
     },
-    {
-        name: 'backToMainMenu',
-        type: 'list',
-        choices: ['Back to main menu'],
-        when(atm) {
-            return atm.mainMenu === 'User Information';
-        }
-    },
 ]);
 let balance = Number((Math.random() * 1000000).toFixed(2));
 if (atm.mainMenu === 'Balance Inquiry') {
@@ -69,9 +61,9 @@ if (atm.mainMenu === 'Cash Withdrawal') {
         console.log('Insufficient Balance.');
     }
 }
-if (atm.mainMenu === 'Exit') {
-    console.log('Thank you for using ATM.');
-}
 if (atm.mainMenu === 'User Information') {
     console.log(atm);
+}
+if (atm.mainMenu === 'Exit') {
+    console.log(chalk.blue('Thank you for using ATM.'));
 }

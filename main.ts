@@ -94,7 +94,7 @@ if (atm.mainMenu === 'User Information'){
 
 
 if (atm.mainMenu === 'Exit'){
-    console.log('Thank you for using ATM.')
+    console.log(chalk.blue('Thank you for using ATM.'))
 }
 
 
